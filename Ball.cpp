@@ -26,7 +26,7 @@ public:
         return box != nullptr;
     }
 
-    string whereAmI();
+    string whereIsBall();
 };
 
 class Box {
@@ -93,7 +93,7 @@ public:
     }
 };
 
-string Ball::whereAmI() {
+string Ball::whereIsBall() {
     if (!isInBox()) {
         return "ни в какой коробке";
     }
@@ -119,9 +119,8 @@ int main() {
     cout << "\nУбираем зелёный шарик" << endl;
     box1.removeBall(&green);
     box1.showBalls();
-    cout << "Зеленый шарик теперь: " << green.whereAmI() << endl;
-
-    cout << "\nПробуем убрать шарик, которого там нет" << endl;
+    cout << "Зеленый шарик теперь: " << green.whereIsBall() << endl;
+    //пробуем убрать шарик, которого там нет
     Ball black("черный", 2);
     box1.removeBall(&black);
     box1.showBalls();
